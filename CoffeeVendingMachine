@@ -1,0 +1,66 @@
+package com.company;
+import java.util.Scanner;
+
+abstract class CoffeeVendingMachine {
+    abstract void Prepare();
+    public void boilWater() {
+        System.out.println("Boiling a water");
+    }
+
+    public void mixingIngredients() {
+        System.out.println("Mixing an ingredients");
+    }
+
+    public void makeCoffee() {
+        boilWater();
+        mixingIngredients();
+        Prepare();
+    }
+}
+
+class Latte extends CoffeeVendingMachine {
+    @Override
+    void Prepare() {
+        System.out.println("Finalizing the preparation of Latte Coffee.");
+    }
+}
+
+class Cappuccino extends CoffeeVendingMachine {
+    @Override
+    void Prepare() {
+        System.out.println("Finalizing the preparation of Cappuccino Coffee.");
+    }
+}
+
+class Mocha extends CoffeeVendingMachine {
+    @Override
+    void Prepare() {
+        System.out.println("Finalizing the preparation of a Mocha Coffee.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Coffee Vending Machine!");
+        System.out.println("Please select the type of coffee:");
+        System.out.println("1. Latte");
+        System.out.println("2. Mocha");
+        System.out.println("3. Cappuccino");
+
+        int select = scanner.nextInt();
+
+        CoffeeVendingMachine coffee = null;
+        if (select == 1) {
+            coffee = new Latte();
+        } else if (select == 2) {
+            coffee = new Mocha();
+        } else if (select == 3) {
+            coffee = new Cappuccino();
+        } else {
+            System.out.println("Your Selected number is Invalid ! Please select 1, 2, or 3.");
+            return;
+        }
+        coffee.makeCoffee();
+    }
+}
