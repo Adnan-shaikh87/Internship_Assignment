@@ -9,6 +9,6 @@ public class ArrayListExample {
         numbers.add(10);
 
         System.out.println("List of Numbers: " + numbers);
-        System.out.println("First Number of List: " + numbers.get(0));
+        System.out.println("First Number of List: " + numbers.get(1));
     }
 }
