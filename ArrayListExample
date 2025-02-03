@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(10);
+
+        System.out.println("List of Numbers: " + numbers);
+        System.out.println("First Number of List: " + numbers.get(0));
+    }
+}
